@@ -32,6 +32,8 @@ JOIN (
         Customer c
     JOIN
         Invoice i ON c.CustomerId = i.CustomerId
+    WHERE
+        i.InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
     GROUP BY
         c.SupportRepId
 ) s ON e.EmployeeId = s.AgentId
